@@ -17,6 +17,10 @@ print(f"Palabra: {word_displayed}")
 for i in range(max_attempts):
     letter = input("Ingresa una letra: ").lower()
 
+    if (len(letter) == 0):
+        print("No se ha ingresado ninguna letra")
+        continue
+
     if letter in guessed_letters:
         print("Ya has intentado con esa letra. Intenta con otra.")
         continue
