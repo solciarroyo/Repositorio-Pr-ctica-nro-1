@@ -63,9 +63,8 @@ while (failures < max_failures):
         failures += 1
         continue
 
-    if letter in guessed_letters:
+    if (letter in guessed_letters):
         print("Ya has intentado con esa letra. Intenta con otra.")
-        failures += 1
         continue
     guessed_letters.append(letter) 
 
@@ -83,6 +82,10 @@ while (failures < max_failures):
             letters.append("_")
     word_displayed = "".join(letters)
     print(f"Palabra: {word_displayed}")
+
+    if word_displayed == secret_word:
+        print(f"¡Felicidades! Has adivinado la palabra secreta: {secret_word}")
+        break
 else:
     print(f"¡Oh no! Has agotado tus {max_failures} intentos.")
     print(f"La palabra secreta era: {secret_word}")
